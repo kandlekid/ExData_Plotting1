@@ -11,9 +11,12 @@ dfData <- subset(mydata,select=c(Sub_metering_1,Sub_metering_2,Sub_metering_3,Da
 dfData[,"DateTime"] <- as.POSIXct(paste(dfData$Date,dfData$Time),format="%d/%m/%Y %H:%M:%S",tz="");
 #plot(dfData$DateTime,dfData$Global_active_power,ylab="Global Active Power (kilowatts)",xlab="",ylim=c(0,6),type="l")
 
-plot(dfData$DateTime,dfData$Sub_metering_1,type="l");
-plot(dfData$DateTime,dfData$Sub_metering_2,type="l",col="red");
-plot(dfData$DateTime,dfData$Sub_metering_3,type="l",col="blue");
+plot(dfData$DateTime,dfData$Sub_metering_1,type="l",ylab="Energy Sub Metering",xlab="");
+#plot(dfData$DateTime,dfData$Sub_metering_2,type="l",col="red");
+#plot(dfData$DateTime,dfData$Sub_metering_3,type="l",col="blue");
+lines(dfData$DateTime,dfData$Sub_metering_2,type="l",col="red");
+lines(dfData$DateTime,dfData$Sub_metering_3,type="l",col="blue");
+legend("topright", c("Sub_metering_1","Sub_metering_2","Sub_metering_3"),lty=c(1,1),lwd=c(2.5,2.5),col=c("black","red","blue"));
 
 # Copy the plot to the png file.
 dev.copy( png, file="plot3.png", height=480, width=480);
