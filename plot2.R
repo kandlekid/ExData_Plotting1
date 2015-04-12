@@ -1,4 +1,11 @@
-#setwd("~/SOURCE/ExploratoryDataAnalysis");
+# cas ... Proj 1, Plot2.
+
+##################################################################
+# Please ensure R script readFile.R is run before executing this #
+# script, in order to create the input file.                     #
+##################################################################
+
+setwd("~/SOURCE/ExploratoryDataAnalysis");
 
 # Read the input file.
 
